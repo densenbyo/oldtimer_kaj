@@ -1,0 +1,244 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*car css*/
+.game {
+  width: 100%;
+  height: 600px;
+  background-image: url("/src/components/games/img/car/background.jpg");
+  background-position: center;
+  background-size: cover;
+  border-bottom: 5px solid black;
+  margin: auto;
+}
+#audioSetting {
+  display: none;
+}
+#audioSetting + label:before {
+  content:  "\f028";
+}
+#audioSetting:checked + label:before {
+  content:  "\f6a9";
+}
+.score {
+  max-width: 100px;
+  height: 30px;
+  background-color: white;
+  border: 1px black solid;
+  position: relative;
+  color: red;
+  left: 570px;
+}
+.zhol {
+  width: 100%;
+  height: 100px;
+  background-color: darkgrey;
+  position: relative;
+  top: 500px;
+}
+#car {
+  width: 300px;
+  height: 200px;
+  background-image: url("/src/components/games/img/car/norm.png");
+  background-repeat: no-repeat;
+  background-size: 250px 150px;
+  position: relative;
+  top: 320px;
+}
+.jump {
+  animation: jump 1s linear;
+}
+@keyframes jump {
+  0% {
+    top: 250px;
+    background-image: url("/src/components/games/img/car/dow.png");
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 200px;
+    background-size: 250px 150px;
+  }
+  30% {
+    top: 100px;
+    background-image: url("/src/components/games/img/car/dow.png");
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 200px;
+    background-size: 250px 150px;
+  }
+  80% {
+    top: 80px;
+    background-image: url("/src/components/games/img/car/dow.png");
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 200px;
+    background-size: 250px 150px;
+  }
+  90% {
+    top: 100px;
+    background-image: url("/src/components/games/img/car/dow.png");
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 200px;
+    background-size: 250px 150px;
+  }
+  100% {
+    top: 250px;
+  }
+}
+#stolb {
+  width: 100px;
+  height: 140px;
+  background-image: url("/src/components/games/img/car/stolb.png");
+  background-size: 100px 140px;
+  background-repeat: no-repeat;
+  position: relative;
+  top: 100px;
+  left: 1350px;
+  animation: stolbMov 1.5s infinite linear;
+}
+@keyframes stolbMov {
+  0% {
+    left: 1160px;
+  }
+  100% {
+    left: -4px;
+  }
+}
+#zholpol {
+  width: 100px;
+  height: 140px;
+  background-image: url("/src/components/games/img/car/zholpol.png");
+  background-size: 100px 140px;
+  background-repeat: no-repeat;
+  position: relative;
+  top: 100px;
+  left: 1350px;
+  animation: zholpolMov 1.5s infinite linear;
+  display: none;
+}
+@keyframes zholpolMov {
+  0% {
+    left: 1350px;
+  }
+  100% {
+    left: -20px;
+  }
+}
+.modal-dialog img{
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+}
+
+/*Tick tack toe css*/
+.gameTable {
+  margin: 0 auto;
+  border-radius:10px;
+}
+.gameTable td {
+  border: 2px solid black;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  font-size: 8em;
+  box-sizing:border-box;
+}
+
+.gameTable td:hover{
+  cursor:pointer;
+  background-color: #ded7ca;
+}
+
+.gameTable td:first-child{
+  border-left: none;
+}
+.gameTable td:last-child{
+  border-right: none;
+}
+
+.gameTable td:nth-child(2n+2){
+  border-right: none;
+  border-left: none;
+}
+
+.gameTable thead tr td{
+  background-color: beige;
+  transition: 0.5s;
+}
+
+.gameTable tbody tr td{
+  background-color: beige;
+  transition: 0.5s;
+}
+
+.gameTable tfoot tr td{
+  background-color: beige;
+  transition: 0.5s;
+}
+
+.container, .playerTurn {
+  text-align: center;
+}
+
+.X, .O {
+  border-radius: 10px;
+}
+.X {
+  background: red;
+}
+.O {
+  background: blue;
+}
+
+.clear {
+  background: beige;
+}
+
+#reset {
+  padding: 5px;
+  width: 400px;
+  font-size: 1.5em;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#reset:hover{
+  background: #b8bdee;
+  border-color: white;
+}
