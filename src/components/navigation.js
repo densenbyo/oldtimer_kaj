@@ -14,10 +14,13 @@ export default class NavigationBar extends React.Component {
                     </Link>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="me-auto">
-                            <Link to={"game"} className="nav-link">Games</Link>
-                            <Link to={"about"} className="nav-link">About</Link>
-                        </Nav>
+                        {localStorage.getItem('userName') === null ?
+                            <Nav className="me-auto"/> :
+                            <Nav className="me-auto">
+                                <Link to={"game"} className="nav-link">Games</Link>
+                                <Link to={"about"} className="nav-link">About</Link>
+                            </Nav>
+                        }
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
