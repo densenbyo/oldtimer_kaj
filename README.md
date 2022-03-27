@@ -10,7 +10,7 @@ In NodeJS or IDE terminal
 
 # Requirments
 1. Dokumentace	Popis		Povinné	Body
-   - [X] Cíl projektu, postup, popis funkčnosti, komentáře ve zdrojovém kódu 1 **REQUIRED**
+   - [ ] Cíl projektu, postup, popis funkčnosti, komentáře ve zdrojovém kódu 1 **REQUIRED**
 
 2. HTML 5
    - [x] Validita Validní použití HTML5 doctype	1 **REQUIRED**
