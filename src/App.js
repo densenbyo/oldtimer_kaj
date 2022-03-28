@@ -46,6 +46,7 @@ export default function App() {
                               <Route exact path='/game/tick' element={<Tick/>}/>
                               <Route exact path='/game/snake' element={<Snake/>}/>
                               <Route exact path='/game/space' element={<Space/>}/>
+                              <Route exact path='*' element={<NotFound/>}/>
                           </Routes>
                       </Col>
                   </Row>
