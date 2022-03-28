@@ -246,3 +246,7 @@
   background: #b8bdee;
   border-color: white;
 }
+
+.notfound:hover {
+  transform: rotateX(360deg);
+}

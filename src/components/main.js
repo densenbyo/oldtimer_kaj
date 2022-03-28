@@ -49,7 +49,7 @@ export default class Main extends React.Component{
         return (
             <div>
                 <div className="wave">
-                    <svg className="first">
+                    {/*<svg className="first">
                         <circle cx="100" cy="100" r="100" fill="#758081"/>
                     </svg>
                     <svg className="second">
@@ -57,7 +57,7 @@ export default class Main extends React.Component{
                     </svg>
                     <svg className="third">
                         <circle cx="100" cy="100" r="50" fill="#758081"/>
-                    </svg>
+                    </svg>*/}
                 </div>
                 <Card style={{ width: '18rem' }} className="mx-auto">
                     {localStorage.length === 0 ?
@@ -69,8 +69,8 @@ export default class Main extends React.Component{
                             </Card.Text>
                             <InputGroup className="mb-3">
                                 <label htmlFor="fname" style={{margin: "0 auto"}}>Your Name:</label>
-                                <input type="text" id="fname" name={"name"} style={{margin: "0 auto"}} autoFocus={true}
-                                       required={true} onChange={this.handleChange} value={name}/>
+                                <input type="text" id="fname" name={"name"} style={{margin: "0 auto", borderRadius:"12px"}} autoFocus={true}
+                                       required={true} onChange={this.handleChange} placeholder="Name" value={name}/>
                             </InputGroup>
                             <Button variant="primary"
                                     onClick={this.setLocal} className="stupidBtn">Let's start</Button>

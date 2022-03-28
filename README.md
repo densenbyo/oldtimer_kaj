@@ -17,7 +17,7 @@ In NodeJS or IDE terminal
    - [x] Validita "Fungující v moderních prohlíčečích v posledních vývojových verzích(Chrome, Firefox, Edge, Opera)" 2
    - [x] Semantické značky "správné použití sémantických značek(section, article, nav, aside, ...)" 1 **REQUIRED**
    - [x] Grafika - SVG / Canvas	2
-   - [ ] Média - Audio/Video 1
+   - [x] Média - Audio/Video 1
    - [x] Formulářové prvky Validace, typy, placeholder, autofocus 2
    - [ ] Offline aplikace "využití možnosti fungování stránky bez Internetového připojení(viz sekce Javascript)" 1
 
@@ -25,7 +25,7 @@ In NodeJS or IDE terminal
 3. CSS
    - [x] Pokročilé selektory použití pokročilých pseudotříd a kombinátorů 1 **REQUIRED**
    - [x] Vendor prefixy 1
-   - [ ] CSS3 transformace 2D/3D 2
+   - [x] CSS3 transformace 2D/3D 2
    - [x] CSS3 transitions/animations 2 **REQUIRED**
    - [x] Media queries stránky fungují i na mobilních zařízeních i jiných (tedy nerozpadají se)	2
 
@@ -36,7 +36,7 @@ In NodeJS or IDE terminal
    - [ ] Funkční historie posun tlačítky zpět/vpřed prohlížeče - pokud to vyplývá z funkcionatilty (History API) 2
    - [x] Ovládání medií	použití Média API (video, zvuk), přehrávání z JS 1
    - [ ] Offline aplikace využití JS API pro zjišťování stavu 1
-   - [ ] JS práce se SVG události, tvorba, úpravy 2
+   - [x] JS práce se SVG události, tvorba, úpravy 2
 
 5. Ostatní
    - [ ] Kompletnost řešení	3
