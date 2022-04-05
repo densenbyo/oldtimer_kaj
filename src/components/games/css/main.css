@@ -10,13 +10,13 @@
     width:100%;
     margin: 0px 0 0 0;
 }
-.first {
+/*.first {
     width: 200px;
     height: 200px;
     position: relative;
     top: 100px;
     left: 550px;
-}
+}*/
 .second {
     width: 500px;
     height: 500px;
@@ -31,4 +31,12 @@
     position: relative;
     top: -100px;
     left: 50px;
+}
+.first {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    transition: all 1.2s ease;
 }

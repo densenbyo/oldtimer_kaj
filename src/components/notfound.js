@@ -1,30 +1,23 @@
 import React from 'react';
 
 
-export default class NotFound extends React.Component {
-
-    render() {
-        const divStyle = {
-            backgroundColor: "#212529",
-            margin: "200px auto",
-            padding: "20px",
-            color: "white",
-            width: "200px",
-            borderRadius: "100px",
-            transition: "all 1.5s ease"
-        };
-
-        return (
-            <div style={divStyle} className={"text-center"} class="notfound">
-                <h3 >NOT FOUND</h3>
-                <p>
-                    Page you are looking for is not found!
-                </p>
-                <p style={{fontSize:"3px", color:"black"}}>
-                    хитрый пиздюк
-                </p>
-            </div>
-
-        );
+export default function NotFound(){
+    function rotate(e) {
+        e.target.style.transform = "rotateX(360deg)";
+        setTimeout(() => {
+            e.target.style.transform = "";
+        }, 500);
     }
+
+    return (
+        <div className={"text-center"} class="notfound" id="yes">
+            <svg className="first" onMouseOver={rotate}>
+                <circle cx="200" cy="200" r="200" fill="#212529"/>
+                <text x="155" y="120" style={{color:"#999999", fontSize:"15px",}}>NOT FOUND</text>
+                <text x="70" y="190" style={{color:"#999999", fontSize:"15px",}}>Page you are looking for is not found!</text>
+                <text x="170" y="250" style={{color:"#999999", fontSize:"8px",}}>хитрый пиздюк</text>
+            </svg>
+        </div>
+
+    );
 }
