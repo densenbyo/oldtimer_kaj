@@ -4,7 +4,7 @@ export default class Space extends React.Component {
     render() {
         return (
             <div>
-                Space
+                Not implemented :(
             </div>
         );
     }

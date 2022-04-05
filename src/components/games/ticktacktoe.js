@@ -1,11 +1,17 @@
 import React, {useState} from 'react';
-import {Button, ButtonGroup, Container} from "react-bootstrap";
+import {Button, ButtonGroup, Card, Container, InputGroup, Modal} from "react-bootstrap";
 import xMove from './audio/uhh.ogg';
 import oMove from './audio/ahh.ogg';
-import success from "./audio/jumpSound.ogg";
-import fail from "./audio/failSound.ogg";
 
 export default function Tick(){
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    const [name, setName] = useState("")
+    const handleChangeName = (e) => {
+        localStorage.setItem('secondUser', e.target.value);
+        setName(e.target.value);
+    }
 
     window.onload = start;
     const boxes = document.getElementsByTagName("td");
@@ -30,7 +36,7 @@ export default function Tick(){
         setChecked(e.target.checked);
     }
 
-    const [text, setText] = useState("It is X's turn");
+    const [text, setText] = useState("It is "+ localStorage.getItem("userName") +"'s turn");
     const handleX = () => setText("It is X's turn");
     const handleO = () => setText("It is O's turn")
     const handleGameOver = () => setText("Game Over!");
@@ -71,7 +77,7 @@ export default function Tick(){
                     moveSoundForO();
                 }
                 counter++;
-                checkForWin(XMoves, "X");
+                checkForWin(XMoves, localStorage.getItem("userName"));
             }
             // if the counter is greater than or equal to 10, the game is a draw!
             if (counter >= 10){
@@ -123,40 +129,51 @@ export default function Tick(){
         handleX()
     }
 
+
     return (
         <Container>
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>About</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    Classical implementation of TickTackToe game with sound. Click on needed
+                    cell and you will hear my friend's voice :)
+                </Modal.Body>
+            </Modal>
             <div>
                 <div className="container">
                     <ButtonGroup>
-                        <Button id="reset" variant="primary">Cleat Board</Button>
+                    <Button id="reset" variant="primary">Cleat Board</Button>
+                    <Button id="reset" variant="success" onClick={handleShow}>About</Button>
                     </ButtonGroup>
                 </div>
                 <input type="checkbox" checked={checked}
-                       onChange={(e) => handleChange(e)}/>
+                onChange={(e) => handleChange(e)}/>
                 <span style={{fontSize:"9px", color:"darkred", marginLeft:"10px"}}>Checked is audio on</span>
                 <p style={{fontSize: "20px"}}>Audio Settings</p>
                 <h2 className="playerTurn">{text}</h2>
                 <table className="gameTable">
                     <thead>
-                    <tr>
-                        <td data-num="0"/>
-                        <td data-num="1"/>
-                        <td data-num="2"/>
-                    </tr>
+                        <tr>
+                            <td data-num="0"/>
+                            <td data-num="1"/>
+                            <td data-num="2"/>
+                        </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td data-num="3"/>
-                        <td data-num="4"/>
-                        <td data-num="5"/>
-                    </tr>
+                        <tr>
+                            <td data-num="3"/>
+                            <td data-num="4"/>
+                            <td data-num="5"/>
+                        </tr>
                     </tbody>
                     <tfoot>
-                    <tr>
-                        <td data-num="6"/>
-                        <td data-num="7"/>
-                        <td data-num="8"/>
-                    </tr>
+                        <tr>
+                            <td data-num="6"/>
+                            <td data-num="7"/>
+                            <td data-num="8"/>
+                        </tr>
                     </tfoot>
                 </table>
             </div>

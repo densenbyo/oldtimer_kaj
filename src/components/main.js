@@ -60,7 +60,7 @@ export default class Main extends React.Component{
                     </svg>*/}
                 </div>
                 <Card style={{ width: '18rem' }} className="mx-auto">
-                    {localStorage.length === 0 ?
+                    {localStorage.getItem("userName") === null ?
                         <Card.Body>
                             <Card.Title>Welcome to OldTimer</Card.Title>
                             <Card.Text>

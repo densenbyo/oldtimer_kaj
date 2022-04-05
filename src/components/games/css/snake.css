@@ -1,27 +1,25 @@
-#GameBoard {
-    position: relative;
-    margin: auto;
-    border-style: solid;
+.grid {
+    border: 2px solid black;
+    width: 500px;
+    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+    margin: 0 auto;
 }
 
-#GameBoard .Block {
-    position: absolute;
+.cell {
+    display: inline-block;
 }
 
-#GameBoard #Score {
-    position: relative;
-    top: 105%;
-    text-align: center;
-    font-weight: bold;
+.apple {
+    background: red;
 }
 
-#GameBoard #GameOverText {
-    color: #ca0000;
-    font-weight: bold;
-    text-decoration-line: underline;
+.head {
+    background: blue;
 }
 
-#GameBoard #PressSpaceText {
-    color: #2e7ecb;
-    font-weight: bold;
+.tail {
+    background: lightblue;
 }
