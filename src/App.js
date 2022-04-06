@@ -15,7 +15,7 @@ import Snake from "./components/games/snake";
 import Space from "./components/games/space";
 import NotFound from "./components/notfound";
 
-
+//Main container for all others components
 export default function App() {
   const marginTop = {
     marginTop: "20px"
@@ -24,6 +24,9 @@ export default function App() {
   return (
       <Router>
         <NavigationBar/>
+          {/*check localStorage if user wrote his name on main page
+             if there is no data set available page as Main page
+             otherwise set available all pages*/}
           {localStorage.getItem('userName') === null ?
               <Container>
                   <Row>

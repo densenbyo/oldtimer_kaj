@@ -3,6 +3,9 @@ import {Button, Col, Container, Modal, Navbar} from "react-bootstrap";
 import meme from '../utils/meme.mp4';
 
 export default function Footer(){
+    //Function which represents footer with hidden meme in it
+
+    //useState hook to show or hide modal window
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);

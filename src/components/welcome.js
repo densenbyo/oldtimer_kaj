@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class Welcome extends React.Component{
+    //components for showing short info about web page
     render() {
         const divStyle = {
             margin: "200px",
@@ -16,7 +17,7 @@ export default class Welcome extends React.Component{
                     Actually the name of web is pretty cringe, anyway. Main idea of it to create web with collection of simple games.
                     Such as snake, 2048, ticktacktoe and so on. Just to stupidly kill time by playing stupid games.
                 </p>
-                <p>Enjoy your time spending 😂.</p>
+                <p>Enjoy your time spending {localStorage.getItem("userName")} 😂.</p>
             </div>
         );
     }

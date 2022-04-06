@@ -3,6 +3,9 @@ import './games/css/main.css';
 import {Button, Card, Col, Container, FormControl, InputGroup, Row} from "react-bootstrap";
 
 export default class Main extends React.Component{
+    //Component of main page where is implemented ReactJS type "OOP"
+    //Implemented input fields to get user's name with small and stupid validation
+
     constructor(props) {
         super(props);
         this.state = {
@@ -14,12 +17,14 @@ export default class Main extends React.Component{
         this.setLocal = this.setLocal.bind(this);
     }
 
+    //handle change of input field and sets value of input to components name state
     handleChange = (e) => {
         this.setState({
             [e.target.name] : e.target.value
         });
     };
 
+    //take data from components name state and set it to localStorage
     setLocal = () =>{
         this.validate()
         if(this.state.bool === "false") {
@@ -28,14 +33,14 @@ export default class Main extends React.Component{
         }
     }
 
+    //validate if writen name is capitalized or not empty
     validate() {
-        if(this.state.name[0] !== this.state.name[0].toUpperCase()) {
+        if(this.state.name[0] !== this.state.name[0].toUpperCase() || this.state.name === "") {
             let alert = "Not Capitalized Name";
             this.setState({
                 error : alert,
                 bool : "true"
             })
-
         } else {
             this.setState({
                 error: "",

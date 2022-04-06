@@ -4,32 +4,41 @@ import success from './audio/jumpSound.ogg';
 import fail from './audio/failSound.ogg';
 
 export default function Car() {
+    //Function which represents car game
 
+    //useState hooks
     const [dead, setDead] = useState(false);
     const [score, setScore] = useState(0);
     const [checked, setChecked] = useState(false);
     const [show, setShow] = useState(false);
+
+    //reference links to images
     const stolb = useRef(null);
     const zhas = useRef(null);
     let timer;
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    //handle change of checkbox and save checkboxes value is saved in localStorage
     const handleChange = (e) => {
         localStorage.setItem('checkbox', e.target.checked);
         setChecked(e.target.checked);
     }
 
+    //import jump audio
     let jumpSound = () => {
         const audio = new Audio(success);
         audio.play();
     }
 
+    //import fail sound
     let jumpFail = () => {
         const audio = new Audio(fail);
         audio.play();
     }
 
+    //list of events as jump also checks whether checkbox was checked or not
     useEffect(() => {
         listenEvent();
     }, []);
@@ -47,6 +56,7 @@ export default function Car() {
         }
     }
 
+    //restart
     const restart = () => {
         console.log("GAME START");
         clearInterval(timer);
@@ -54,6 +64,9 @@ export default function Car() {
         setDead(true);
     };
 
+    //animate object in document
+    //means add to "zhas" object reference to jump css which makes object jump
+    //after 500ms delete jump css from "zhas" object
     const animate = () => {
         if(!zhas.current) return;
         if (zhas.current.classList.contains("jump")) return;
@@ -64,6 +77,7 @@ export default function Car() {
         }, 500);
     };
 
+    //checks collision of "zhas" object with "stolb" object
     const checkOver = setInterval(function() {
         try {
             let carTop = parseInt(

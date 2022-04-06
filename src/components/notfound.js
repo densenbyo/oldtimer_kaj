@@ -8,7 +8,8 @@ export default function NotFound(){
             e.target.style.transform = "";
         }, 500);
     }
-
+    //not found page for pages which is not exist in web
+    //implemented small animation of svg just to take point from requirements
     return (
         <div className={"text-center"} class="notfound" id="yes">
             <svg className="first" onMouseOver={rotate}>

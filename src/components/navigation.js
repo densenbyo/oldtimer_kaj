@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 
 export default class NavigationBar extends React.Component {
 
+    //Components for navigation bar which is shown everywhere
     render() {
         return (
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">

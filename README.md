@@ -4,13 +4,13 @@ Try to play [HERE](https://oldtimer-kaj-semestral-work.herokuapp.com).
 # Getting Started on local machine
 In NodeJS or IDE terminal
 ```
--npm install
--npm start
+npm install
+npm start
 ```
 
 # Requirments
 1. Dokumentace/Popis
-   - [ ] Cíl projektu, postup, popis funkčnosti, komentáře ve zdrojovém kódu 1 **REQUIRED**
+   - [x] Cíl projektu, postup, popis funkčnosti, komentáře ve zdrojovém kódu 1 **REQUIRED**
 
 2. HTML 5
    - [x] Validita Validní použití HTML5 doctype	1 **REQUIRED**
@@ -30,7 +30,7 @@ In NodeJS or IDE terminal
    - [x] Media queries stránky fungují i na mobilních zařízeních i jiných (tedy nerozpadají se)	2
 
 4. Javascript
-   - [ ] OOP přístup prototypová dědičnost, její využití, jmenné prostory 2 **REQUIRED**
+   - [x] OOP přístup prototypová dědičnost, její využití, jmenné prostory 2 **REQUIRED**
    - [x] Použití JS frameworku či knihovny	použití a pochopení frameworku či knihovny jQuery, React, Vue .. 1
    - [x] Použití pokročilých JS API	využití pokročilých API (File API, Geolocation, Drag & Drop, LocalStorage, Sockety, ...) 3 **REQUIRED**
    - [x] Funkční historie posun tlačítky zpět/vpřed prohlížeče - pokud to vyplývá z funkcionatilty (History API) 2

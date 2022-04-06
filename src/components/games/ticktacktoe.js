@@ -4,6 +4,9 @@ import xMove from './audio/uhh.ogg';
 import oMove from './audio/ahh.ogg';
 
 export default function Tick(){
+    //Function which renders TickTackToe game
+
+    //useState hooks
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -20,16 +23,19 @@ export default function Tick(){
     let OMoves = [];
     let XMoves = [];
 
+    //import sound for X player
     let moveSoundForX = () => {
         const audio = new Audio(xMove);
         audio.play();
     }
 
+    //import sound for O player
     let moveSoundForO = () => {
         const audio = new Audio(oMove);
         audio.play();
     }
 
+    //handle change of checkbox and save checkboxes value is saved in localStorage
     const [checked, setChecked] = useState(false);
     const handleChange = (e) => {
         localStorage.setItem('checkbox', e.target.checked);
@@ -37,10 +43,11 @@ export default function Tick(){
     }
 
     const [text, setText] = useState("It is "+ localStorage.getItem("userName") +"'s turn");
-    const handleX = () => setText("It is X's turn");
+    const handleX = () => setText("It is "+ localStorage.getItem("userName") +"'s turn");
     const handleO = () => setText("It is O's turn")
     const handleGameOver = () => setText("Game Over!");
 
+    //constant list of winning combinations
     const winningCombinations = [[0, 1, 2], [3, 4, 5], [6, 7, 8],
         [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
 
@@ -49,12 +56,15 @@ export default function Tick(){
         addResetListener();
     }
 
+    //listener for moves
     function addXandOListener() {
         for (let i = boxes.length - 1; i >= 0; i--) {
             boxes[i].addEventListener("click", addXorO);
         }
     }
 
+    //according to listener adds X or O text to table
+    //also checks for winning combinations
     function addXorO(event){
         if (event.target.innerHTML.length === 0){
             if (counter % 2 === 0) {
@@ -90,11 +100,13 @@ export default function Tick(){
         }
     }
 
+    //reset listener
     function addResetListener(){
         let resetButton = document.getElementById("reset");
         resetButton.addEventListener("click", resetBoard);
     }
 
+    //check for win
     function checkForWin(movesArray, name){
         // loop over the first array of winning combinations
         for (let i = 0; i < winningCombinations.length; i++) {
@@ -117,6 +129,7 @@ export default function Tick(){
         }
     }
 
+    //resets board means clear it
     const resetBoard = () => {
         for (let i = boxes.length - 1; i >= 0; i--) {
             boxes[i].innerHTML="";

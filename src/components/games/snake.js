@@ -3,6 +3,10 @@ import './css/snake.css';
 import {Container, DropdownButton, Dropdown, Button} from "react-bootstrap";
 
 export default class Snake extends React.Component{
+    //Component which represents snake game
+    //used ReactJS type "OOP"
+
+    //set default value of document
     constructor() {
         super();
         const grid = [];
@@ -37,6 +41,7 @@ export default class Snake extends React.Component{
         }
     }
 
+    //onload of window set game started
     componentDidMount = () => {
         document.addEventListener('keydown', (e) => {
             this.setVelocity(e);
@@ -46,6 +51,7 @@ export default class Snake extends React.Component{
         }, this.state.snake.tail.length ? (400 / this.state.snake.tail.length) + 200 : 400);
     }
 
+    //randomly generate apple position in grid
     getRandomApple = () => {
         const { snake } = this.state;
         const newApple = {
@@ -61,6 +67,8 @@ export default class Snake extends React.Component{
         }
     }
 
+    //game loop where is implemented whole game loop
+    //checks collision, snake size and so on
     gameLoop = () => {
         if (this.state.gameOver) return;
         this.setState(({snake, apple}) => {
@@ -95,6 +103,7 @@ export default class Snake extends React.Component{
         });
     }
 
+    //checks collision of "snake" object with sides of grid
     isOffEdge = () => {
         const { snake } = this.state;
 
@@ -106,29 +115,32 @@ export default class Snake extends React.Component{
         }
     }
 
+    //check if snake "ate" apple
     collidesWithApple = () => {
         const { apple, snake } = this.state;
         return apple.row === snake.head.row
             && apple.col === snake.head.col;
     }
 
+    //simple checkers
     isApple = (cell) => {
         const { apple } = this.state;
         return apple.row === cell.row
             && apple.col === cell.col;
     }
-
     isHead = (cell) => {
         const { snake } = this.state;
         return snake.head.row === cell.row
             && snake.head.col === cell.col;
     }
-
     isTail = (cell) => {
         const { snake } = this.state;
         return snake.tail.find(inTail => inTail.row === cell.row && inTail.col === cell.col);
     }
 
+    //function which is representing logic of movements
+    //with event.keyCode function of DOM
+    //setted as WASD and ARROWS
     setVelocity = (event) => {
         const { snake } = this.state;
         if (event.keyCode === 38 || event.keyCode === 87) { // up

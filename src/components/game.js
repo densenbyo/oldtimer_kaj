@@ -2,6 +2,7 @@ import React from 'react';
 import {Button, Card, Col, Container, Row} from "react-bootstrap";
 
 export default class Game extends React.Component{
+    //Component to represent list of games
     render() {
         const style = {
             position:'absolute',
@@ -28,7 +29,7 @@ export default class Game extends React.Component{
                             <Card.ImgOverlay>
                                 <Card.Title style={{textAlign:'center', color : '#dbdbdb'}}>Space Invader</Card.Title>
                                 <div style={style}>
-                                    <Button href="game/space" variant="primary">PLAY!</Button>
+                                    <Button href="game/space" variant="primary" disabled={true}>PLAY!</Button>
                                 </div>
                             </Card.ImgOverlay>
                         </Card>
